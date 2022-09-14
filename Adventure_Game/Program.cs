@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Du är en hjälte som fått uppdrag att döda en drake i en skog vid namn Nargusskogar...");
         }
     }
 }
