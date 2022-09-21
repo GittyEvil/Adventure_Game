@@ -2,16 +2,37 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
+
+        //main funktionen för allt 
+        static void Main(string[] args) {
+            int edmg = 5;
+            int dmg = 20;
+            int health = 200;
+
             Start();
             
         }
 
+        //första fighten som kommer även starten av spelet.
         static void Skogen() {
+            int varg = 100;
+            int varghealth = 50;
+
+
             Console.WriteLine("Du står nu djupt inuti skogen och hör något som prasslar");
             Console.WriteLine("du blir överfallen av ett par vargar.");
             Console.WriteLine("Hur vill du göra?,vill du attackera eller fly?");
+
+            string val = Console.ReadLine();
+            
+            if (val == "attackera")
+            {
+                attack();
+            }
+            else if (val == "fly")
+            {
+                Start();
+            }
 
         }
 
@@ -39,6 +60,12 @@
             }
 
 
+
+        }
+
+        //attack funktion, ska fungera för alla fighter framöver.
+        static void attack()
+        {
 
         }
     }
