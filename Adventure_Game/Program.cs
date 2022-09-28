@@ -2,12 +2,18 @@
 {
     internal class Program
     {
+        private static int ehealth;
+        private static int edmg;
+        private static int health;
+        private static int dmg;
 
+       
         //main funktionen för allt 
         static void Main(string[] args) {
-            int edmg = 5;
+            /*int edmg = 5;
             int dmg = 20;
             int health = 200;
+            */
 
             Start();
             
@@ -36,6 +42,7 @@
 
         }
 
+        //start funktionen
         static void Start() {
 
             //Lite backstory/ inledning på spelet
@@ -66,6 +73,16 @@
         //attack funktion, ska fungera för alla fighter framöver.
         static void attack()
         {
+            
+            ehealth = 50;
+            edmg = 5;
+
+          
+            while (ehealth > 0)
+            {
+                
+            }
+
 
         }
     }
