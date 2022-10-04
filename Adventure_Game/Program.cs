@@ -76,11 +76,20 @@
             
             ehealth = 50;
             edmg = 5;
-
+            health = 200;
+            dmg = 25;
           
-            while (ehealth > 0)
+            while (health > 0)
             {
-                
+                if(ehealth > 0)
+                {
+                    ehealth--;
+                }
+
+                if(ehealth <0)
+                {
+                    Console.WriteLine("du dödade monstret");
+                }
             }
 
 
