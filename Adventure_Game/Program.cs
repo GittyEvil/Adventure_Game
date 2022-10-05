@@ -37,6 +37,7 @@
             }
             else if (val == "fly")
             {
+                Console.WriteLine("du flydde...");
                 Start();
             }
 
