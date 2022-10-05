@@ -84,6 +84,7 @@
             {
                 if(ehealth > 0)
                 {
+                    
                     _ = hp1 - dmg;
                     attack();
                     Console.WriteLine("monstret har"+hp1+ "hp kvar.");
