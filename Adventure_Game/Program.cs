@@ -1,13 +1,13 @@
-﻿namespace Adventure_Game
-{
+﻿namespace Adventure_Game {
     internal class Program
     {
         private static int ehealth;
         private static int edmg;
         private static int health;
         private static int dmg;
+        private static int hp;
 
-       
+
         //main funktionen för allt 
         static void Main(string[] args) {
             /*int edmg = 5;
@@ -72,19 +72,21 @@
         }
 
         //attack funktion, ska fungera för alla fighter framöver.
-        static void attack()
-        {
-            
+        static void attack() {
+            int hp1 = hp;
             ehealth = 50;
             edmg = 5;
             health = 200;
             dmg = 25;
+            
           
             while (health > 0)
             {
                 if(ehealth > 0)
                 {
-                    ehealth--;
+                    _ = hp1 - dmg;
+                    attack();
+                    Console.WriteLine();
                 }
 
                 if(ehealth <0)
