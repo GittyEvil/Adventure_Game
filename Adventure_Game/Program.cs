@@ -73,26 +73,27 @@
 
         //attack funktion, ska fungera för alla fighter framöver.
         static void attack() {
-            int hp1 = hp;
-            ehealth = 50;
+            int hp1 = ehealth = 50;
+            int hp2 = health=200;
             edmg = 5;
             health = 200;
             dmg = 25;
             
           
-            while (health > 0)
+            while (hp2 > 0)
             {
                 if(ehealth > 0)
                 {
                     _ = hp1 - dmg;
                     attack();
-                    Console.WriteLine();
+                    Console.WriteLine("monstret har"+hp1+ "hp kvar.");
                 }
 
                 if(ehealth <0)
                 {
                     Console.WriteLine("du dödade monstret");
                 }
+
             }
 
 
