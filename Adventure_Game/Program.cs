@@ -15,9 +15,6 @@
         }
         //main funktionen för allt 
         static void Main(string[] args) {
-            int edmg = 5;
-            int dmg = 20;
-            int health = 200;
 
             Start();
             
