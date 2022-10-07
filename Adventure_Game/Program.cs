@@ -1,19 +1,23 @@
 ﻿namespace Adventure_Game {
     internal class Program
     {
-        private static int ehealth;
-        private static int edmg;
-        private static int health;
-        private static int dmg;
-        private static int hp;
 
+        class Player
+        {
+            public static int health;
+            public static int dmg;
+        }
 
+        class Enemy
+        {
+            public static int ehealth;
+            public static int edmg;
+        }
         //main funktionen för allt 
         static void Main(string[] args) {
-            /*int edmg = 5;
+            int edmg = 5;
             int dmg = 20;
             int health = 200;
-            */
 
             Start();
             
@@ -21,8 +25,6 @@
 
         //första fighten som kommer även starten av spelet.
         static void Skogen() {
-            int varg = 100;
-            int varghealth = 50;
 
 
             Console.WriteLine("Du står nu djupt inuti skogen och hör något som prasslar");
@@ -72,23 +74,22 @@
         }
 
         //attack funktion, ska fungera för alla fighter framöver.
-        static void attack() {
-            int hp1 = ehealth = 50;
-            int hp2 = health=200;
-            edmg = 5;
-            health = 200;
-            dmg = 25;
+        static void attack(int health, int ehealth, int dmg, int edmg) {
+            
+            
             
           
-            while (hp2 > 0)
+            while (health > 0)
             {
                 if(ehealth > 0)
                 {
-                    
-                    _ = hp1 - dmg;
-                    attack();
-                    Console.WriteLine("monstret har"+hp1+ "hp kvar.");
+                    //attack
+                
+                    Console.WriteLine("monstret har"+ehealth+ "hp kvar.");
+                    Console.WriteLine("du har tagit skada,"+health+"hp kvar.");
+                    attack(health, ehealth, dmg, edmg);
                 }
+                    
 
                 if(ehealth <0)
                 {
