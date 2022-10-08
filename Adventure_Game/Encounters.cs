@@ -8,7 +8,7 @@ namespace Adventure_Game
 {
     class Encounters
     {
-
+        //första fighten vid skogen
         public static void Förstafight()
         {
             Console.WriteLine("vargarna ser argt på dig medans de morrar mot dig");
@@ -17,20 +17,21 @@ namespace Adventure_Game
             Console.ReadKey();
             Attack(1,4);
         }
-
+        //själva fight funktionen
         static void Attack(int health, int power)
         {
             int p = power;
             int hp = health; 
-            while (health > 0)
+            while (hp > 0)
             {
+                //visar motståndarens hp skada samt vad spelaren kan göra, visar hp och potions
                 Console.Clear();
                 Console.WriteLine("varg");
-                Console.WriteLine("hp:" + hp+ "skada" + p);
+                Console.WriteLine("hp:" + hp + "skada" + p);
                 Console.WriteLine("----------------------");
-                Console.WriteLine("(A)ttack (B)lock");
-                Console.WriteLine("(H)eal   (R)un  ");
-                Console.WriteLine("----------------");
+                Console.WriteLine("(A)ttack       (B)lock");
+                Console.WriteLine("(H)eal         (R)un  ");
+                Console.WriteLine("----------------------");
                 Console.WriteLine("Potions:" + Program.currentPlayer.potion + "Health:" + Program.currentPlayer.health);
                 string input = Console.ReadLine();
 
@@ -38,6 +39,7 @@ namespace Adventure_Game
                 {
                     Console.WriteLine("du slår mot vargarna med ditt vapen och vargarna hugger tillbaka");
                     int damage = p - Program.currentPlayer.armorValue;
+                    //kollar så att det inte kan bli negativ skada och att moståndaren inte helear spelaren
                     if(damage < 0)
                     {
                         damage = 0;
@@ -53,6 +55,7 @@ namespace Adventure_Game
                 {
                     Console.WriteLine("När vargarna slår på dig väljer du att blocka skadan");
                     int damage = (p/6) - Program.currentPlayer.armorValue;
+
                     if(damage < 0)
                     {
                         damage = 0;
@@ -83,10 +86,25 @@ namespace Adventure_Game
                     Console.ReadKey();
 
                 }
-
+                /*lyckas motståndaren få ner ditt hp till 0 eller under förlorar du och spelet avslutas, borde loopa om så den sätter dig vid start igen eller
+                 åtminstonde börjar om fighten
+                */
+                if(Program.currentPlayer.health <=0)
+                {
+                    Console.WriteLine("Monstret lyckades få det bättre av dig och gjorde det sista slaget mot dig och du faller som en tapper hjälte..");
+                }
+                Console.ReadKey();
 
             }
-
+            //om du lyckats få motståndarens hp ner till 0 eller under så vinner du striden
+            if (hp<= 0)
+            {
+                Console.Clear();
+                Console.WriteLine("Du står nu över vargarnas döda kroppar och letar efter guld eller annat som du kan plocka på dig..");
+                Console.WriteLine("du hittar:");
+                Console.ReadKey();
+            }
+                
 
         }
 
