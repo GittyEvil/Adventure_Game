@@ -2,17 +2,9 @@
     internal class Program
     {
 
-        class Player
-        {
-            public static int health;
-            public static int dmg;
-        }
-
-        class Enemy
-        {
-            public static int ehealth;
-            public static int edmg;
-        }
+        public static Player currentPlayer = new Player();
+        public static Encounters encounters = new Encounters();
+       
         //main funktionen för allt 
         static void Main(string[] args) {
 
@@ -32,7 +24,7 @@
             
             if (val == "attackera")
             {
-                attack();
+                Encounters.Förstafight();
             }
             else if (val == "fly")
             {
@@ -70,32 +62,5 @@
 
         }
 
-        //attack funktion, ska fungera för alla fighter framöver.
-        static void attack(int health, int ehealth, int dmg, int edmg) {
-            
-            
-            
-          
-            while (health > 0)
-            {
-                if(ehealth > 0)
-                {
-                    //attack
-                
-                    Console.WriteLine("monstret har"+ehealth+ "hp kvar.");
-                    Console.WriteLine("du har tagit skada,"+health+"hp kvar.");
-                    attack(health, ehealth, dmg, edmg);
-                }
-                    
-
-                if(ehealth <0)
-                {
-                    Console.WriteLine("du dödade monstret");
-                }
-
-            }
-
-
-        }
-    }
+   }
 }
