@@ -3,7 +3,7 @@
     {
 
         public static Player currentPlayer = new Player();
-        public static Encounters encounters = new Encounters();
+        public static Skog encounters = new Skog();
        
         //main funktionen för allt 
         static void Main(string[] args) {
@@ -17,14 +17,14 @@
 
 
             Console.WriteLine("Du står nu djupt inuti skogen och hör något som prasslar");
-            Console.WriteLine("du blir överfallen av ett par vargar.");
+            Console.WriteLine("du blir överfallen av en stor varg.");
             Console.WriteLine("Hur vill du göra?,vill du attackera eller fly?");
 
             string val = Console.ReadLine();
             
             if (val == "attackera")
             {
-                Encounters.Förstafight();
+                Skog.Förstafight();
             }
             else if (val == "fly")
             {
@@ -62,5 +62,6 @@
 
         }
 
+        
    }
 }

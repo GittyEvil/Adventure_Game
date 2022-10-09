@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Adventure_Game
 {
-    class Encounters
+    class Skog
     {
         //första fighten vid skogen
         public static void Förstafight()
         {
-            Console.WriteLine("vargarna ser argt på dig medans de morrar mot dig");
-            Console.WriteLine("du märker att de rör sig sakta mot dig och börjar omringa dig");
+            Console.WriteLine("vargen ser argt på dig medans den morrar mot dig");
+            Console.WriteLine("du märker att den rör sig sakta mot dig");
             Console.WriteLine("samtidigt gör du dig redo för strid.");
             Console.ReadKey();
-            Attack(1,4);
+            Attack(10,1);
         }
         //själva fight funktionen
         static void Attack(int health, int power)
@@ -37,7 +37,7 @@ namespace Adventure_Game
 
                 if(input.ToLower() == "a" ||input.ToLower() == "attack")
                 {
-                    Console.WriteLine("du slår mot vargarna med ditt vapen och vargarna hugger tillbaka");
+                    Console.WriteLine("du slår mot vargen med ditt vapen och vargen hugger tillbaka");
                     int damage = p - Program.currentPlayer.armorValue;
                     //kollar så att det inte kan bli negativ skada och att moståndaren inte helear spelaren
                     if(damage < 0)
@@ -46,14 +46,14 @@ namespace Adventure_Game
                     }
                     int attack = Program.currentPlayer.weaponValue + 4;
 
-                    Console.WriteLine("Du tar "+damage+"i skada och ditt hp är nu"+health+"och du gör"+attack+"mot vargarna");
+                    Console.WriteLine("Du tar "+damage+"i skada och ditt hp är nu"+health+"och du gör"+attack+"mot vargen");
                     Program.currentPlayer.health-= damage;
                     hp -= attack;
                     Console.ReadKey();
                 }
                 if (input.ToLower() == "b" || input.ToLower() == "block")
                 {
-                    Console.WriteLine("När vargarna slår på dig väljer du att blocka skadan");
+                    Console.WriteLine("När vargen slår på dig väljer du att blocka skadan");
                     int damage = (p/6) - Program.currentPlayer.armorValue;
 
                     if(damage < 0)
@@ -82,7 +82,7 @@ namespace Adventure_Game
                 }
                 if (input.ToLower() == "r" || input.ToLower() == "run")
                 {
-                    Console.WriteLine("du försöker fly men samtidigt som du springer iväg så överfaller vargarna dig och du dör...");
+                    Console.WriteLine("du försöker fly men samtidigt som du springer iväg så överfaller vargen dig och du dör...");
                     Console.ReadKey();
 
                 }
@@ -100,9 +100,10 @@ namespace Adventure_Game
             if (hp<= 0)
             {
                 Console.Clear();
-                Console.WriteLine("Du står nu över vargarnas döda kroppar och letar efter guld eller annat som du kan plocka på dig..");
+                Console.WriteLine("Du står nu över vargens döda kroppar och letar efter guld eller annat som du kan plocka på dig..");
                 Console.WriteLine("du hittar:");
                 Console.ReadKey();
+                Grotta.Grottöppning();
             }
                 
 

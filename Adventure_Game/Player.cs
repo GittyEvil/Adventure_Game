@@ -8,7 +8,7 @@ namespace Adventure_Game
 {   //karaktären som spelaren spelar samt values för motståndare, orkar inte göra separat kanske fixar senare
     class Player
     {
-        public int health = 10;
+        public int health = 20;
         public int dmg = 1;
         public int potion = 5;
         public int power = 0;
