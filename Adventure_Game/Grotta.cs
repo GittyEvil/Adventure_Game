@@ -86,6 +86,9 @@ namespace Adventure_Game
                 Console.WriteLine("Du gör dig redo för strid.");
                 Console.ReadKey();
                 //bossfight funktion
+
+
+
             }
 
             if (input.ToLower() == "s" || input.ToLower() == "springa")
@@ -98,6 +101,52 @@ namespace Adventure_Game
 
         }
 
+        /*fight funktion åter igen, har inte hittat något där jag kan rätt av kopiera/använda
+          den gamla fight funktionen direkt så jag får göra en kopia
+        */
+        static void Attack(int health, int power)
+        {
+
+            while (health > 0)
+            {
+                Console.Clear();
+
+                Console.WriteLine("varg");
+                Console.WriteLine("hp:" + health + "skada" + power);
+                Console.WriteLine("----------------------");
+                Console.WriteLine("(A)ttack       (B)lock");
+                Console.WriteLine("(H)eal         (R)un  ");
+                Console.WriteLine("----------------------");
+                Console.WriteLine("Potions:" + Program.currentPlayer.potion + "Health:" + Program.currentPlayer.health); // tar in värdena från class Player
+
+
+
+                string input = Console.ReadLine();
+
+                if (input.ToLower() == "a" || input.ToLower() == "attack")
+                {
+
+                }
+
+                if (input.ToLower() == "b" || input.ToLower() == "block")
+                {
+
+                }
+
+                if (input.ToLower() == "h" || input.ToLower() == "heal")
+                {
+
+                }
+
+                if (input.ToLower() == "r" || input.ToLower() == "run")
+                {
+
+                }
+
+
+
+
+            }
 
 
 

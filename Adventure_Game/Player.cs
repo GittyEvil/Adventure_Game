@@ -15,4 +15,6 @@ namespace Adventure_Game
         public int armorValue = 0;
         public int weaponValue = 1;
     }
+
+    
 }

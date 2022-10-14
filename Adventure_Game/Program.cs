@@ -3,6 +3,7 @@
     {
         
         public static Player currentPlayer = new Player();
+        public static Boss currentBoss = new Boss();
         public static Skog encounters = new Skog();
        
         //main funktionen för allt 
