@@ -1,7 +1,7 @@
 ﻿namespace Adventure_Game {
     internal class Program
     {
-
+        
         public static Player currentPlayer = new Player();
         public static Skog encounters = new Skog();
        

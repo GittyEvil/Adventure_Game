@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Adventure_Game
 {
+    //när man kommit in i grottan
     internal class Grotta
     {
+        //funktion för när man står vid grottöppningen
         public static void Grottöppning()
         {
             Console.WriteLine("När du väl besegrat vargarna så ser du lite längre fram i skogen att det smalnar av.");
@@ -20,6 +22,7 @@ namespace Adventure_Game
 
             if(input.ToLower() == "h" || input.ToLower() =="hoppa")
             {
+                //tar sig in i grottan
                 Grottan();
             }
             
@@ -27,6 +30,7 @@ namespace Adventure_Game
             {
                 Console.WriteLine("Du står kvar och ser ut som en idiot som tappat bort sig.");
                 Console.ReadKey();
+                //du kommer inte kunna backa utan du måste in tillslut för att fortsätta
                 Grottöppning();
             }
 
@@ -35,6 +39,7 @@ namespace Adventure_Game
 
         }
 
+        //när du kommer längre in i grottan 
         static void Grottan()
         {
             Console.WriteLine("Du har nu hoppat ner i grottan och det är kolsvart.");
@@ -60,6 +65,7 @@ namespace Adventure_Game
             }
         }
 
+        //bossfight
         static void Drake()
         {
             Console.WriteLine("Du tar tag i det stooora handtaget och drar med allt du har.");
