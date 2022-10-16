@@ -86,7 +86,7 @@ namespace Adventure_Game
             {
                 Console.WriteLine("Du gör dig redo för strid.");
                 Console.ReadKey();
-                Attack(50, 5, 10);
+                Attack_drake(50, 5);
 
 
 
@@ -105,7 +105,7 @@ namespace Adventure_Game
         /*fight funktion åter igen, har inte hittat något där jag kan rätt av kopiera/använda
           den gamla fight funktionen direkt så jag får göra en kopia
         */
-        static void Attack(int health, int power, int potion)
+        static void Attack_drake(int health, int power)
         {
 
             while (health > 0)
@@ -164,7 +164,7 @@ namespace Adventure_Game
                     else
                     {
                         Console.WriteLine("du tar fram en health potion och tar bort korken");
-                        //int potion = 5;
+                        int potion = 5;
                         Console.WriteLine("du helar " + potion + "hp.");
                         Program.currentPlayer.health += potion;
                         Console.ReadKey();
