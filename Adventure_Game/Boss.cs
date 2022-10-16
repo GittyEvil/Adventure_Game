@@ -10,7 +10,6 @@ namespace Adventure_Game
     {
         public int health = 50;
         public int power = 0;
-        public int damage = 5;
 
 
 

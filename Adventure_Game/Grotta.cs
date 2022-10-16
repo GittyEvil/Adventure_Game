@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Adventure_Game
 {
     //när man kommit in i grottan
-    internal class Grotta
+    class Grotta
     {
         //funktion för när man står vid grottöppningen
         public static void Grottöppning()
         {
-            Console.WriteLine("När du väl besegrat vargarna så ser du lite längre fram i skogen att det smalnar av.");
+            Console.WriteLine("När du väl besegrat vargen så ser du lite längre fram i skogen att det smalnar av.");
             Console.WriteLine("Du går åt det hållet och ser ett hål lite längre fram som liknar ett hål till en sorts grotta");
             Console.WriteLine("Du tänker genast att det är där draken ligger och beger dig mot hålet.");
             Console.ReadKey();
@@ -85,7 +86,7 @@ namespace Adventure_Game
             {
                 Console.WriteLine("Du gör dig redo för strid.");
                 Console.ReadKey();
-                //bossfight funktion
+                Attack(50, 5, 10);
 
 
 
@@ -104,15 +105,15 @@ namespace Adventure_Game
         /*fight funktion åter igen, har inte hittat något där jag kan rätt av kopiera/använda
           den gamla fight funktionen direkt så jag får göra en kopia
         */
-        static void Attack(int health, int power)
+        static void Attack(int health, int power, int potion)
         {
 
             while (health > 0)
             {
                 Console.Clear();
 
-                Console.WriteLine("varg");
-                Console.WriteLine("hp:" + health + "skada" + power);
+                Console.WriteLine("Drake");
+                Console.WriteLine("hp:" + Program.currentBoss.health + "skada" + power);
                 Console.WriteLine("----------------------");
                 Console.WriteLine("(A)ttack       (B)lock");
                 Console.WriteLine("(H)eal         (R)un  ");
@@ -125,22 +126,56 @@ namespace Adventure_Game
 
                 if (input.ToLower() == "a" || input.ToLower() == "attack")
                 {
+                    int attack = Program.currentPlayer.weaponValue + 4;
+                    int dmg = power - Program.currentPlayer.armorValue;
+                    if (dmg < 0)
+                    {
+                        dmg = 0;
+                    }
 
+                    Console.WriteLine("du SPRINGER mot draken, höjer ditt vapen samt skriker mot draken och");
+                    Console.WriteLine("drar in vapnet i drakens hårda hud.");
+                    Console.WriteLine("draken tar "+attack+"i skada när du dragit svärdet i magen på den");
+
+                    Console.WriteLine("Samtidigt som svärdet går igenom drakens hud höjer draken en av sina tassar och");
+                    Console.WriteLine("slår med klorna mot dig och du tar " +dmg +"ditt hp ligger nu på: "+health+".");
+                    Program.currentPlayer.health -= dmg;
+                    health -= attack;
+                    Console.ReadKey();
                 }
 
                 if (input.ToLower() == "b" || input.ToLower() == "block")
                 {
+                    Console.WriteLine("Draken höjer sin högra tass och slår med klorna mot dig");
+                    Console.WriteLine("Du höjer vapnet som skydd och lyckas blocka slaget");
 
+                    Console.WriteLine("du ligger pressad med en tung klo på dig men lyckas nätt och jämt slå bort den");
+                    Console.WriteLine("du är svettig och sjukt trött men lyckas ställa dig upp");
+                    Console.ReadKey();
                 }
 
                 if (input.ToLower() == "h" || input.ToLower() == "heal")
                 {
-
+                    if (Program.currentPlayer.potion == 0)
+                    {
+                        Console.WriteLine("i panik letar du efter potions men inser att du inte har några kvar utan en tom flaska.");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        Console.WriteLine("du tar fram en health potion och tar bort korken");
+                        //int potion = 5;
+                        Console.WriteLine("du helar " + potion + "hp.");
+                        Program.currentPlayer.health += potion;
+                        Console.ReadKey();
+                    }
                 }
 
                 if (input.ToLower() == "r" || input.ToLower() == "run")
                 {
-
+                    Console.WriteLine("du vet inte om du skulle kunna döda denna drake och försöker fly");
+                    Console.WriteLine("du springer mot dörren och glider lätt igenom glipan du öppnade innan");
+                    Drake();
                 }
 
 

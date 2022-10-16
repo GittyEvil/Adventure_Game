@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Adventure_Game
 {
+
     class Skog
     {
+        public static Grotta encounter = new Grotta();
         //första fighten vid skogen
         public static void Förstafight()
         {
@@ -15,7 +17,7 @@ namespace Adventure_Game
             Console.WriteLine("du märker att den rör sig sakta mot dig");
             Console.WriteLine("samtidigt gör du dig redo för strid.");
             Console.ReadKey();
-            Attack(10,1);
+            Attack(15,1);
         }
         //själva fight funktionen
         static void Attack(int health, int power)
