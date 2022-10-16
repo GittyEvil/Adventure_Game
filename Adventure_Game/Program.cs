@@ -17,7 +17,7 @@
         //första fighten som kommer även starten av spelet.
         static void Skogen() {
 
-
+            Console.Clear();
             Console.WriteLine("Du står nu djupt inuti skogen och hör något som prasslar");
             Console.WriteLine("du blir överfallen av en stor varg.");
             Console.WriteLine("Hur vill du göra?,vill du attackera eller fly?");

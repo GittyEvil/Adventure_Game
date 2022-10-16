@@ -13,6 +13,7 @@ namespace Adventure_Game
         //första fighten vid skogen
         public static void Förstafight()
         {
+            Console.Clear();
             Console.WriteLine("vargen ser argt på dig medans den morrar mot dig");
             Console.WriteLine("du märker att den rör sig sakta mot dig");
             Console.WriteLine("samtidigt gör du dig redo för strid.");
@@ -22,6 +23,7 @@ namespace Adventure_Game
         //själva fight funktionen
         static void Attack(int health, int power)
         {
+            int potion = 5;
             int p = power;
             int hp = health; 
             while (hp > 0)
@@ -34,7 +36,7 @@ namespace Adventure_Game
                 Console.WriteLine("(A)ttack       (B)lock");
                 Console.WriteLine("(H)eal         (R)un  ");
                 Console.WriteLine("----------------------");
-                Console.WriteLine("Potions:" + Program.currentPlayer.potion + "Health:" + Program.currentPlayer.health);
+                Console.WriteLine("Potions:" + potion + "Health:" + Program.currentPlayer.health);
                 string input = Console.ReadLine();
 
                 if(input.ToLower() == "a" ||input.ToLower() == "attack")
@@ -68,7 +70,7 @@ namespace Adventure_Game
                 }
                 if (input.ToLower() == "h" || input.ToLower() == "heal")
                 {
-                    if (Program.currentPlayer.potion == 0)
+                    if (potion == 0)
                     {
                         Console.WriteLine("i panik letar du efter potions men inser att du inte har några kvar utan en tom flaska.");
                         Console.ReadKey();
@@ -76,9 +78,9 @@ namespace Adventure_Game
                     else
                     {
                         Console.WriteLine("du tar fram en health potion och tar bort korken");
-                        int potion = 5;
                         Console.WriteLine("du helar"+potion+"hp.");
                         Program.currentPlayer.health += potion;
+                        potion -= 1;
                         Console.ReadKey();
                     }
                 }

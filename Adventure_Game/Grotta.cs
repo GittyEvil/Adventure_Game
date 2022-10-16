@@ -13,6 +13,7 @@ namespace Adventure_Game
         //funktion för när man står vid grottöppningen
         public static void Grottöppning()
         {
+            Console.Clear();
             Console.WriteLine("När du väl besegrat vargen så ser du lite längre fram i skogen att det smalnar av.");
             Console.WriteLine("Du går åt det hållet och ser ett hål lite längre fram som liknar ett hål till en sorts grotta");
             Console.WriteLine("Du tänker genast att det är där draken ligger och beger dig mot hålet.");
@@ -21,13 +22,13 @@ namespace Adventure_Game
             Console.WriteLine("(H)oppa   (S)tå kvar");
             string input = Console.ReadLine();
 
-            if(input.ToLower() == "h" || input.ToLower() =="hoppa")
+            if (input.ToLower() == "h" || input.ToLower() == "hoppa")
             {
                 //tar sig in i grottan
                 Grottan();
             }
-            
-            if(input.ToLower() == "s"|| input.ToLower() == "stå kvar")
+
+            if (input.ToLower() == "s" || input.ToLower() == "stå kvar")
             {
                 Console.WriteLine("Du står kvar och ser ut som en idiot som tappat bort sig.");
                 Console.ReadKey();
@@ -43,6 +44,7 @@ namespace Adventure_Game
         //när du kommer längre in i grottan 
         static void Grottan()
         {
+            Console.Clear();
             Console.WriteLine("Du har nu hoppat ner i grottan och det är kolsvart.");
             Console.WriteLine("Det enda du kan göra när du väl kollat dig runt är att gå framåt.");
             Console.WriteLine("när du väl gått i den mörka grottan ett tag ser du en stooor port framför dig");
@@ -69,6 +71,7 @@ namespace Adventure_Game
         //bossfight
         static void Drake()
         {
+            Console.Clear();
             Console.WriteLine("Du tar tag i det stooora handtaget och drar med allt du har.");
             Console.WriteLine("Du hör hur det knarrar i den stooora porten och lyckas få upp en liten glipa");
             Console.WriteLine("När du väl smyger in i det mörka rummet");
@@ -107,18 +110,18 @@ namespace Adventure_Game
         */
         static void Attack_drake(int health, int power)
         {
-
+            int potion = 5;
             while (health > 0)
             {
                 Console.Clear();
 
                 Console.WriteLine("Drake");
-                Console.WriteLine("hp:" + Program.currentBoss.health + "skada" + power);
+                Console.WriteLine("hp:" + health + "skada" + power);
                 Console.WriteLine("----------------------");
                 Console.WriteLine("(A)ttack       (B)lock");
                 Console.WriteLine("(H)eal         (R)un  ");
                 Console.WriteLine("----------------------");
-                Console.WriteLine("Potions:" + Program.currentPlayer.potion + "Health:" + Program.currentPlayer.health); // tar in värdena från class Player
+                Console.WriteLine("Potions:" + potion + "Health:" + Program.currentPlayer.health); // tar in värdena från class Player
 
 
 
@@ -135,10 +138,10 @@ namespace Adventure_Game
 
                     Console.WriteLine("du SPRINGER mot draken, höjer ditt vapen samt skriker mot draken och");
                     Console.WriteLine("drar in vapnet i drakens hårda hud.");
-                    Console.WriteLine("draken tar "+attack+"i skada när du dragit svärdet i magen på den");
+                    Console.WriteLine("draken tar " + attack + "i skada när du dragit svärdet i magen på den");
 
                     Console.WriteLine("Samtidigt som svärdet går igenom drakens hud höjer draken en av sina tassar och");
-                    Console.WriteLine("slår med klorna mot dig och du tar " +dmg +"ditt hp ligger nu på: "+health+".");
+                    Console.WriteLine("slår med klorna mot dig och du tar " + dmg + "ditt hp ligger nu på: " + health + ".");
                     Program.currentPlayer.health -= dmg;
                     health -= attack;
                     Console.ReadKey();
@@ -156,7 +159,7 @@ namespace Adventure_Game
 
                 if (input.ToLower() == "h" || input.ToLower() == "heal")
                 {
-                    if (Program.currentPlayer.potion == 0)
+                    if (potion == 0)
                     {
                         Console.WriteLine("i panik letar du efter potions men inser att du inte har några kvar utan en tom flaska.");
                         Console.ReadKey();
@@ -164,9 +167,9 @@ namespace Adventure_Game
                     else
                     {
                         Console.WriteLine("du tar fram en health potion och tar bort korken");
-                        int potion = 5;
                         Console.WriteLine("du helar " + potion + "hp.");
                         Program.currentPlayer.health += potion;
+                        potion -= 1;
                         Console.ReadKey();
                     }
                 }
@@ -178,6 +181,16 @@ namespace Adventure_Game
                     Drake();
                 }
 
+                if(health < 0 )
+                {
+                    Console.Clear();
+                    Console.WriteLine("Du lyckades döda draken nätt och jämnt");
+                    Console.WriteLine("Du skär av drakens huvud och lägger den i en säck du fick med dig innan äventyret.");
+                    Console.WriteLine("du kommer ihåg att ditt uppdrag du fick var att döda draken och ta dig ut levande");
+                    Console.WriteLine("så du börjar leta efter en utgång samtidigt som du plockar på dig det du kan fråga smyckeshögarna");
+                    //Fixa loot och så att man har inventory
+                    Console.ReadKey();
+                }
 
 
 
@@ -185,5 +198,6 @@ namespace Adventure_Game
 
 
 
+        }
     }
 }
