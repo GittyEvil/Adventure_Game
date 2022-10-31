@@ -14,6 +14,7 @@ namespace Adventure_Game
         public int power = 0;
         public int armorValue = 0;
         public int weaponValue = 1;
+        public int gold = 0;
     }
 
     

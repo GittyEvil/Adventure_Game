@@ -50,7 +50,7 @@ namespace Adventure_Game
                     }
                     int attack = Program.currentPlayer.weaponValue + 4;
 
-                    Console.WriteLine("Du tar "+damage+"i skada och ditt hp är nu"+health+"och du gör"+attack+"mot vargen");
+                    Console.WriteLine("Du tar "+damage+" i skada och ditt hp är nu"+Program.currentPlayer.health+" och du gör"+attack+" mot vargen");
                     Program.currentPlayer.health-= damage;
                     hp -= attack;
                     Console.ReadKey();
@@ -65,7 +65,7 @@ namespace Adventure_Game
                         damage = 0;
                     }
                     int attack = Program.currentPlayer.weaponValue + 1;
-                    Console.WriteLine("du tar"+damage+"du ligger nu på"+health+"samt att du skadar"+attack+".");
+                    Console.WriteLine("du tar"+damage+" i skada och du ligger nu på"+Program.currentPlayer.health+" samt att du skadar"+attack+".");
                     Console.ReadKey();
                 }
                 if (input.ToLower() == "h" || input.ToLower() == "heal")
@@ -78,7 +78,7 @@ namespace Adventure_Game
                     else
                     {
                         Console.WriteLine("du tar fram en health potion och tar bort korken");
-                        Console.WriteLine("du helar"+potion+"hp.");
+                        Console.WriteLine("du helar"+potion+" hp.");
                         Program.currentPlayer.health += potion;
                         potion -= 1;
                         Console.ReadKey();
@@ -105,7 +105,8 @@ namespace Adventure_Game
             {
                 Console.Clear();
                 Console.WriteLine("Du står nu över vargens döda kroppar och letar efter guld eller annat som du kan plocka på dig..");
-                Console.WriteLine("du hittar:");
+                Console.WriteLine("du hittar: 300 guldmynt i pälsen på vargen");
+                Program.currentPlayer.gold += 300;
                 Console.ReadKey();
                 Grotta.Grottöppning();
             }

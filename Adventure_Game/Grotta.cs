@@ -89,7 +89,7 @@ namespace Adventure_Game
             {
                 Console.WriteLine("Du gör dig redo för strid.");
                 Console.ReadKey();
-                Attack_drake(50, 5);
+                Attack_drake(50, 1);
 
 
 
@@ -138,10 +138,10 @@ namespace Adventure_Game
 
                     Console.WriteLine("du SPRINGER mot draken, höjer ditt vapen samt skriker mot draken och");
                     Console.WriteLine("drar in vapnet i drakens hårda hud.");
-                    Console.WriteLine("draken tar " + attack + "i skada när du dragit svärdet i magen på den");
+                    Console.WriteLine("draken tar " + attack + " i skada när du dragit svärdet i magen på den");
 
                     Console.WriteLine("Samtidigt som svärdet går igenom drakens hud höjer draken en av sina tassar och");
-                    Console.WriteLine("slår med klorna mot dig och du tar " + dmg + "ditt hp ligger nu på: " + health + ".");
+                    Console.WriteLine("slår med klorna mot dig och du tar " + dmg + " skada och ditt hp ligger nu på: " + Program.currentPlayer.health+ ".");
                     Program.currentPlayer.health -= dmg;
                     health -= attack;
                     Console.ReadKey();
@@ -187,11 +187,21 @@ namespace Adventure_Game
                     Console.WriteLine("Du lyckades döda draken nätt och jämnt");
                     Console.WriteLine("Du skär av drakens huvud och lägger den i en säck du fick med dig innan äventyret.");
                     Console.WriteLine("du kommer ihåg att ditt uppdrag du fick var att döda draken och ta dig ut levande");
-                    Console.WriteLine("så du börjar leta efter en utgång samtidigt som du plockar på dig det du kan fråga smyckeshögarna");
-                    //Fixa loot och så att man har inventory
+                    Console.WriteLine("så du börjar leta efter en utgång samtidigt som du plockar på dig det du kan få upp");
+                    Console.WriteLine("du lyckas plocka på dig 3000 guldmynt");
+                    Program.currentPlayer.gold += 3000;
+                    Console.WriteLine("du har nu "+ Program.currentPlayer.gold+" mynt.");
                     Console.ReadKey();
-                }
 
+
+
+                }
+                
+                if(Program.currentPlayer.health <= 0) {
+                    Console.WriteLine("du dog");
+                    Console.ReadKey();
+                    Drake();
+                }
 
 
             }
