@@ -11,6 +11,7 @@ namespace Adventure_Game
     class Grotta
     {
         //funktion för när man står vid grottöppningen
+        public static Flykt encounters = new Flykt();
         public static void Grottöppning()
         {
             Console.Clear();
@@ -89,7 +90,7 @@ namespace Adventure_Game
             {
                 Console.WriteLine("Du gör dig redo för strid.");
                 Console.ReadKey();
-                Attack_drake(50, 1);
+                Attack_drake(50, 3);
 
 
 
@@ -145,6 +146,8 @@ namespace Adventure_Game
                     Program.currentPlayer.health -= dmg;
                     health -= attack;
                     Console.ReadKey();
+
+                    
                 }
 
                 if (input.ToLower() == "b" || input.ToLower() == "block")
@@ -191,11 +194,30 @@ namespace Adventure_Game
                     Console.WriteLine("du lyckas plocka på dig 3000 guldmynt");
                     Program.currentPlayer.gold += 3000;
                     Console.WriteLine("du har nu "+ Program.currentPlayer.gold+" mynt.");
+
+                    Console.Clear();
+                    Console.WriteLine("du kollar dig runt om i den stora salen och fortsätter att gå längre in");
+                    Console.WriteLine("du ser hur det ligger massor av skelett runt i salen och tänker genast att de som gav dig uppdraget");
+                    Console.WriteLine("har lurat dig och har bara försökt döda dig");
+                    Console.WriteLine("när du väl går djupare in så märker du att du har gått väldigt länge och det känns som om du inte kommit någon vart");
+                    Console.WriteLine("du testar att gå tillbaka där du kom i från");
+                    Console.WriteLine("går och går och det känns som att dörren du kom in i aldrig kommer närmare");
+                    Console.WriteLine("du börjar springa mot dörren");
+                    Console.WriteLine("ingenting händer.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    Console.WriteLine("du vaknar igen av du ligger vid draken du döda men nu har du en katt brevid dig");
+                    Console.WriteLine("katten sitter och kollar på skumt");
+                    Console.WriteLine("du kollar på draken och inser direkt vad du gör här och försöker ta dig mot dörren återigen");
+                    Console.WriteLine("du börjar gå");
+                    Console.WriteLine("denna gång känns det som att du faktiskt kommer närmre dörren");
+                    Console.WriteLine("kan det vara katten som följer dig?");
+                    Flykt.Flykten();
                     Console.ReadKey();
 
 
-
                 }
+
                 
                 if(Program.currentPlayer.health <= 0) {
                     Console.Clear();
