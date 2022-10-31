@@ -50,7 +50,7 @@ namespace Adventure_Game
                     }
                     int attack = Program.currentPlayer.weaponValue + 4;
 
-                    Console.WriteLine("Du tar "+damage+" i skada och ditt hp är nu"+Program.currentPlayer.health+" och du gör"+attack+" mot vargen");
+                    Console.WriteLine("Du tar "+damage+" i skada och ditt hp är nu "+Program.currentPlayer.health+" och du gör "+attack+" mot vargen");
                     Program.currentPlayer.health-= damage;
                     hp -= attack;
                     Console.ReadKey();

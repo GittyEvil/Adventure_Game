@@ -181,7 +181,7 @@ namespace Adventure_Game
                     Drake();
                 }
 
-                if(health < 0 )
+                if(health <= 0 )
                 {
                     Console.Clear();
                     Console.WriteLine("Du lyckades döda draken nätt och jämnt");
@@ -198,6 +198,7 @@ namespace Adventure_Game
                 }
                 
                 if(Program.currentPlayer.health <= 0) {
+                    Console.Clear();
                     Console.WriteLine("du dog");
                     Console.ReadKey();
                     Drake();
