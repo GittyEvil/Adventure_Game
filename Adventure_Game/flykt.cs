@@ -29,6 +29,13 @@ namespace Adventure_Game
             Console.ReadKey();
             Console.WriteLine("DU är nu katten");
             Console.WriteLine("du börjar trycka dig in i den smala hålan medans killen sitter vid utgången");
+            Console.WriteLine("det är kolsvart men du fortsätter krypa framåt ");
+            Console.WriteLine("tillslut når du en större öppning och en halvmeter fram så fins det ytterligare 3 gångar");
+            Console.WriteLine("Vilken av gångarna vill du ta?");
+            Console.Writeline("(V)änster  (M)itten  (H)öger  ");
+            string input = Console.ReadLine();
+
+            if(input == )
 
 
 
