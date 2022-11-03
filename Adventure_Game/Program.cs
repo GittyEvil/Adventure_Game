@@ -7,7 +7,7 @@
         public static Skog encounters = new Skog();
         public static Grotta encounter = new Grotta();
        
-        //main funktionen för allt 
+        //main funktionen för spelet
         static void Main(string[] args) {
 
             Start();

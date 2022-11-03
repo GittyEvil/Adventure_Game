@@ -204,16 +204,14 @@ namespace Adventure_Game
                     Console.WriteLine("går och går och det känns som att dörren du kom in i aldrig kommer närmare");
                     Console.WriteLine("du börjar springa mot dörren");
                     Console.WriteLine("ingenting händer.");
-                    Console.ReadKey();
-                    Console.Clear();
                     Console.WriteLine("du vaknar igen av du ligger vid draken du döda men nu har du en katt brevid dig");
                     Console.WriteLine("katten sitter och kollar på skumt");
                     Console.WriteLine("du kollar på draken och inser direkt vad du gör här och försöker ta dig mot dörren återigen");
                     Console.WriteLine("du börjar gå");
                     Console.WriteLine("denna gång känns det som att du faktiskt kommer närmre dörren");
                     Console.WriteLine("kan det vara katten som följer dig?");
-                    Flykt.Flykten();
                     Console.ReadKey();
+                    Flykt.Flykten();
 
 
                 }
