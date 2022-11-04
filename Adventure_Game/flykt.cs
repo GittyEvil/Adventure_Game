@@ -10,6 +10,7 @@ namespace Adventure_Game
     {
         public static void Flykten()
         {
+            Console.Clear();
             Console.WriteLine("Du når dörren och katten fortsätter att följa dig");
             Console.WriteLine("det är ingen normal katt utan den lyser mörklila och pälsen liknar mer rymden än normal päls");
             Console.WriteLine("du smiter genom glipan du skapa förut");
@@ -22,9 +23,11 @@ namespace Adventure_Game
             Console.WriteLine("du testar att trycka in dig i hålet men lyckas inte");
             Console.WriteLine("du sitter vid hålan och ser helt förstörd ut");
             Console.WriteLine("hur ska du ta dig ut nu");
-            //Console.Clear();
+            Console.ReadKey();
+            Console.Clear();
             Console.WriteLine("Katten som nu inte gjort något hittils går igenom hålan");
-            //Console.Clear();
+            Console.ReadKey();
+            Console.Clear();
             Console.WriteLine("DU är nu katten");
             Console.WriteLine("du börjar trycka dig in i den smala hålan medans killen sitter vid utgången");
             Console.WriteLine("det är kolsvart men du fortsätter krypa framåt ");

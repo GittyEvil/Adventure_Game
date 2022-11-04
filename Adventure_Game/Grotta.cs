@@ -169,7 +169,7 @@ namespace Adventure_Game
                     }
                     else
                     {
-                        Console.WriteLine("du tar fram en health potion och tar bort korken");
+                           Console.WriteLine("du tar fram en health potion och tar bort korken");
                         Console.WriteLine("du helar " + potion + "hp.");
                         Program.currentPlayer.health += potion;
                         potion -= 1;
