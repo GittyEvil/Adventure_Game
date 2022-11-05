@@ -104,7 +104,7 @@ namespace Adventure_Game
             if (hp<= 0)
             {
                 Console.Clear();
-                Console.WriteLine("Du står nu över vargens döda kroppar och letar efter guld eller annat som du kan plocka på dig..");
+                Console.WriteLine("Du står nu över vargens döda kropp och letar efter guld eller annat som du kan plocka på dig..");
                 Console.WriteLine("du hittar: 300 guldmynt i pälsen på vargen");
                 Program.currentPlayer.gold += 300;
                 Console.ReadKey();
