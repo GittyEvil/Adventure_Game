@@ -221,6 +221,7 @@ namespace Adventure_Game
                     Console.Clear();
                     Console.WriteLine("du dog");
                     Console.ReadKey();
+                    Program.currentPlayer.health += 20;
                     Drake();
                 }
 

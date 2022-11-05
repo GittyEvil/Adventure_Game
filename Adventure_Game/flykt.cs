@@ -38,11 +38,12 @@ namespace Adventure_Game
 
             if(input.ToLower() == "v" || input.ToLower() =="vänster")
             {
+                //Console.Clear();
                 Console.WriteLine("du beger dig mot den vänstra gången och börjar krypa igenom");
                 Console.WriteLine("det går rätt så fort tills att du kommit igenom gången");
                 Console.WriteLine("när du väl kommit till slutet och kollar ut så ser du massa vargar som står upp");
                 Console.WriteLine("du smyger in");
-                Console.Clear();
+                //Console.Clear();
                 Console.WriteLine("du har nu blivit upptäckt av någon varulv");
                 Console.WriteLine("varulven ryter och rusar mot dig och du står helt blickstilla som om du inte kan röra dig");
                 Console.WriteLine("varulven biter mot dig och så fort den hugger in i din lilla kropp så förlorar du din syn men du hör en bomb gå av");
@@ -140,7 +141,9 @@ namespace Adventure_Game
             Console.WriteLine("|        Spelet är           |");
             Console.WriteLine("|        avklarat            |");
             Console.WriteLine("|   du slutade spelet utan   |");
-            Console.WriteLine("|         att dö             |");
+            Console.WriteLine("|         att dö och         |");
+            Console.WriteLine("|        katten valde        |");
+            Console.WriteLine("|         dig                |");
             Console.WriteLine("|       med " + Program.currentPlayer.gold+  " guld.       |");
             Console.WriteLine("------------------------------");
 
